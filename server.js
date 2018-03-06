@@ -8,7 +8,12 @@ const urlLogger = (request, response, next) => {
   next()
 }
 
-app.get('/json', urlLogger, (request, response) => {
+const timeLogger = (request, response, next) => {
+  console.log('Datetime:', new Date(Date.now()).toString())
+  next()
+}
+
+app.get('/json', urlLogger, timeLogger, (request, response) => {
   response.status(200).json({"name": "James"})
 })
 
