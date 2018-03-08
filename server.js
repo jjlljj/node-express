@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const data = require('./data')
 
 const urlLogger = (request, response, next) => {
   console.log('Request URL:', request.url)
@@ -19,7 +20,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/json', (request, response) => {
-  response.status(200).json({"name": "James"})
+  response.status(200).json(data)
 })
 
 app.listen(3000, () => {

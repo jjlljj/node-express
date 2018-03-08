@@ -6,3 +6,5 @@ const data = [
     "name": "Test"
   }
 ]
+
+module.exports = data
