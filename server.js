@@ -27,5 +27,6 @@ app.listen(3000, () => {
   console.log('express intro running on localhost:3000')
 })
 
-// add custom 404 page
-// create separate json data file, load that file && send that data as response
+app.use( (req, res, next) => {
+    res.status(404).send("Page not found")
+})
